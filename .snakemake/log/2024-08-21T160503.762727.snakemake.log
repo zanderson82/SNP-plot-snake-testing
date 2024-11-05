@@ -1,0 +1,59 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+vcf_filter        2
+total             3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Aug 21 16:05:04 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake/annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+    output: /n/zandersion/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    jobid: 4
+    reason: Missing output files: /n/zandersion/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    wildcards: sample=HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+        awk '($6 >= 15 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake/annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf > /n/zandersion/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+        
+
+[Wed Aug 21 16:05:05 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+    output: /n/zandersion/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    jobid: 1
+    reason: Missing output files: /n/zandersion/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    wildcards: sample=HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+        awk '($6 >= 15 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf > /n/zandersion/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+        
+[Wed Aug 21 16:05:05 2024]
+Finished job 4.
+1 of 3 steps (33%) done
+[Wed Aug 21 16:05:05 2024]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Aug 21 16:05:05 2024]
+localrule all:
+    input: /n/zandersion/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zandersion/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    jobid: 0
+    reason: Input files updated by another job: /n/zandersion/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zandersion/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    resources: tmpdir=/tmp
+
+[Wed Aug 21 16:05:05 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2024-08-21T160503.762727.snakemake.log

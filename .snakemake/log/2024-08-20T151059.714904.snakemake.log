@@ -1,0 +1,45 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+bcftools_view        1
+total                2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Aug 20 15:10:59 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+    jobid: 1
+    reason: Missing output files: /n/zanderson/SNP-plot-snake/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+    wildcards: sample=HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+        bcftools view -R /n/zanderson/SNP-plot-snake/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+        
+Activating conda environment: bcftools-1.19
+[Tue Aug 20 15:11:00 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Aug 20 15:11:00 2024]
+localrule all:
+    input: /n/zanderson/SNP-plot-snake/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+    jobid: 0
+    reason: Input files updated by another job: /n/zanderson/SNP-plot-snake/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+    resources: tmpdir=/tmp
+
+[Tue Aug 20 15:11:00 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-08-20T151059.714904.snakemake.log

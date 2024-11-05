@@ -1,0 +1,50 @@
+Building DAG of jobs...
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1081, in execute
+    self._build_dag()
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1037, in _build_dag
+    async_run(self.dag.init())
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/common/__init__.py", line 94, in async_run
+    return asyncio.run(coroutine)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 179, in init
+    job = await self.update([job], progress=progress, create_inventory=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1013, in update
+    raise exceptions[0]
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 970, in update
+    await self.update_(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1109, in update_
+    raise ex
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1092, in update_
+    selected_job = await self.update(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1013, in update
+    raise exceptions[0]
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 970, in update
+    await self.update_(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1137, in update_
+    raise MissingInputException(job, missing_input)
+snakemake.exceptions.MissingInputException: Missing input files for rule make_SNP_plot:
+    output: SNP-Plots/NMU_new-SNP-PLOT.svg
+    affected files:
+        filtered-annotated-VCFs/file_list.txt
+
+MissingInputException in rule make_SNP_plot in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/make-SNP-plot.smk, line 1:
+Missing input files for rule make_SNP_plot:
+    output: SNP-Plots/NMU_new-SNP-PLOT.svg
+    affected files:
+        filtered-annotated-VCFs/file_list.txt

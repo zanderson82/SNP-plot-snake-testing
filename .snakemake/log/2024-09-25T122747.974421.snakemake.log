@@ -1,0 +1,7 @@
+Building DAG of jobs...
+File path /n/alignments/unsolved//M1009-NP-WGS-unsolved-SKD-ZTTK/M1009-NP-WGS-unsolved-SKD-ZTTK.PMDV_FINAL.phased.vcf.gz contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /n/alignments/unsolved//M1009-NP-WGS-unsolved-SKD-ZTTK/M1009-NP-WGS-unsolved-SKD-ZTTK.guppy646.sup.withMeth.pass.hg38.clair3.phased.vcf.gz contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+MissingInputException in rule all in file /n/zanderson/SNP-plot-snake-testing/workflow/Snakefile, line 36:
+Missing input files for rule all:
+    affected files:
+        /n/alignments/unsolved//M1009-NP-WGS-unsolved-SKD-ZTTK/M1009-NP-WGS-unsolved-SKD-ZTTK.PMDV_FINAL.phased.vcf.gz

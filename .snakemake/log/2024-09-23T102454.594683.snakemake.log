@@ -1,0 +1,27 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+bcftools_view        1
+total                1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:24:54 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 0
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+Activating conda environment: bcftools-1.19
+[Mon Sep 23 10:24:57 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-09-23T102454.594683.snakemake.log

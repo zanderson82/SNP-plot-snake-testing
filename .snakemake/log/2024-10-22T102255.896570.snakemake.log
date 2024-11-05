@@ -1,0 +1,129 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+bcftools_view              1
+get_plot_files_rule        1
+make_SNP_plot              1
+vcf_annotate               1
+vcf_filter                 1
+total                      6
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Oct 22 10:22:55 2024]
+localrule bcftools_view:
+    input: /n/alignments/ASPA_CHOP/RDN0272-00_PacBio_aspa_canavan_wgs/RDN0272-00_PacBio_aspa_canavan_wgs.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.parsed.vcf.gz
+    jobid: 5
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.parsed.vcf.gz
+    wildcards: sample=RDN0272-00_PacBio_aspa_canavan_wgs
+    resources: tmpdir=/tmp
+
+
+            bcftools view -R config/gene_coordinates.txt /n/alignments/ASPA_CHOP/RDN0272-00_PacBio_aspa_canavan_wgs/RDN0272-00_PacBio_aspa_canavan_wgs.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.parsed.vcf.gz.tmp
+            bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.parsed.vcf.gz.tmp 
+            mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.parsed.vcf.gz
+            bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+[Tue Oct 22 10:22:57 2024]
+Finished job 5.
+1 of 6 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Oct 22 10:22:57 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.vcf
+    jobid: 4
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.parsed.vcf.gz
+    wildcards: sample=RDN0272-00_PacBio_aspa_canavan_wgs
+    resources: tmpdir=/tmp
+
+
+        unzipped_vcf="/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.unzipped.vcf"
+        zcat /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.parsed.vcf.gz > $unzipped_vcf
+        if [ ! -f $unzipped_vcf]; then
+            echo "Error: $unzipped_vcf not created"
+            exit 1
+        fi
+        bedtools intersect -a $unzipped_vcf -b /n/zanderson/SNP-plot-snake-testing/3_ENSEMBL_CANONICAL_EXON_in_PROTEIN_CODING_GENE_minus_UTR_gencode.v45.annotation.gtf -wa -wb | awk 'BEGIN {OFS="	"} {print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $15, $16}' > /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.vcf 
+        rm $unzipped_vcf
+        
+Activating conda environment: bedtools-2.31.1
+[Tue Oct 22 10:22:58 2024]
+Finished job 4.
+2 of 6 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Oct 22 10:22:58 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.filtered.bed
+    jobid: 3
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.vcf
+    wildcards: sample=RDN0272-00_PacBio_aspa_canavan_wgs
+    resources: tmpdir=/tmp
+
+
+        filtered_vcf_temp="/n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.filtered.bed.temp"
+        awk 'BEGIN {OFS="	"} ($6 >= 5 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.vcf > $filtered_vcf_temp
+        (echo -e "CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE	GENE	EXON"; cat $filtered_vcf_temp) > /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.filtered.bed
+
+        rm $filtered_vcf_temp
+        
+[Tue Oct 22 10:22:58 2024]
+Finished job 3.
+3 of 6 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Oct 22 10:22:58 2024]
+localrule get_plot_files_rule:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    jobid: 2
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/RDN0272-00_PacBio_aspa_canavan_wgs.annotated.filtered.bed
+    resources: tmpdir=/tmp
+
+Activating conda environment: iPython-8.15.0
+[Tue Oct 22 10:22:59 2024]
+Finished job 2.
+4 of 6 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Oct 22 10:22:59 2024]
+localrule make_SNP_plot:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/Canavan-SNP-PLOT.svg
+    jobid: 1
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/Canavan-SNP-PLOT.svg; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    resources: tmpdir=/tmp
+
+Activating conda environment: Rtools-1.1
+[Tue Oct 22 10:23:07 2024]
+Finished job 1.
+5 of 6 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Oct 22 10:23:07 2024]
+localrule all:
+    input: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/Canavan-SNP-PLOT.svg, /n/alignments/ASPA_CHOP/RDN0272-00_PacBio_aspa_canavan_wgs/RDN0272-00_PacBio_aspa_canavan_wgs.vcf.gz
+    jobid: 0
+    reason: Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/Canavan-SNP-PLOT.svg
+    resources: tmpdir=/tmp
+
+[Tue Oct 22 10:23:07 2024]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2024-10-22T102255.896570.snakemake.log

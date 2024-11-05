@@ -1,0 +1,129 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+bcftools_view              3
+get_plot_files_rule        1
+make_SNP_plot              1
+vcf_annotate               3
+vcf_filter                 3
+total                     12
+
+Resources before job selection: {'_cores': 128, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 125, '_nodes': 9223372036854775804}
+Execute 3 jobs...
+
+[Thu Aug 29 14:48:26 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    jobid: 11
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    wildcards: sample=HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 948, in format_wildcards
+    return format(string, **_variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/utils.py", line 427, in format
+    return fmt.format(_pattern, *args, **variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 190, in format
+    return self.vformat(format_string, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 194, in vformat
+    result, _ = self._vformat(format_string, args, kwargs, used_args, 2)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 234, in _vformat
+    obj, arg_used = self.get_field(field_name, args, kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 305, in get_field
+    obj = getattr(obj, i)
+          ^^^^^^^^^^^^^^^
+AttributeError: 'InputFiles' object has no attribute 'input_vcf_list'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1248, in execute
+    raise e
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1244, in execute
+    success = self.scheduler.schedule()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/scheduler.py", line 313, in schedule
+    self.run(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/scheduler.py", line 406, in run
+    executor.run_jobs(jobs)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 71, in run_jobs
+    self.run_job_pre(job)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 86, in run_job_pre
+    self.printjob(job)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 110, in printjob
+    job.log_info()
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 1042, in log_info
+    logger.shellcmd(self.shellcmd, indent=indent)
+                    ^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 601, in shellcmd
+    self.format_wildcards(self.rule.shellcmd)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 950, in format_wildcards
+    raise RuleException(
+snakemake.exceptions.RuleException: AttributeError: 'InputFiles' object has no attribute 'input_vcf_list', when formatting the following:
+
+            set -x  # Enable debugging
+        while read -r sample; do
+            echo "Processing sample: $sample"
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            echo "Output file: $output_file"
+            bcftools view -R {params.gene_coordinates} "$sample" | bgzip > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/$output_file
+            if [ $? -ne 0 ]; then
+                echo "Error in bcftools view for sample: $sample"
+                exit 1
+            fi
+            bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/$output_file
+            if [ $? -ne 0 ]; then
+                echo "Error in bcftools index for file: $output_file"
+                exit 1
+            fi
+        done < {input.input_vcf_list}
+        set +x  # Disable debugging
+        
+
+RuleException in rule bcftools_view in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 31:
+AttributeError: 'InputFiles' object has no attribute 'input_vcf_list', when formatting the following:
+
+            set -x  # Enable debugging
+        while read -r sample; do
+            echo "Processing sample: $sample"
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            echo "Output file: $output_file"
+            bcftools view -R {params.gene_coordinates} "$sample" | bgzip > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/$output_file
+            if [ $? -ne 0 ]; then
+                echo "Error in bcftools view for sample: $sample"
+                exit 1
+            fi
+            bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/$output_file
+            if [ $? -ne 0 ]; then
+                echo "Error in bcftools index for file: $output_file"
+                exit 1
+            fi
+        done < {input.input_vcf_list}
+        set +x  # Disable debugging
+        

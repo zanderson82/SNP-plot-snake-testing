@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+make_SNP_plot        1
+total                2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Aug 22 13:26:16 2024]
+localrule make_SNP_plot:
+    input: /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240822.svg
+    jobid: 1
+    reason: Missing output files: /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240822.svg
+    resources: tmpdir=/tmp
+
+Rscript --vanilla /n/zanderson/SNP-plot-snake/workflow/scripts/SNP-plot.R
+[Thu Aug 22 13:26:16 2024]
+Error in rule make_SNP_plot:
+    jobid: 1
+    input: /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240822.svg
+    shell:
+        Rscript --vanilla /n/zanderson/SNP-plot-snake/workflow/scripts/SNP-plot.R
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-08-22T132615.711979.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

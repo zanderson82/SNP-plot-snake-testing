@@ -1,0 +1,211 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+bcftools_view              4
+get_plot_files_rule        1
+vcf_annotate               4
+vcf_filter                 4
+total                     13
+
+Select jobs to execute...
+Execute 4 jobs...
+
+[Mon Sep 23 10:33:33 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 6
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz; Code has changed since last execution
+    wildcards: sample=HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+Activating conda environment: bcftools-1.19
+
+[Mon Sep 23 10:33:34 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 12
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz; Code has changed since last execution
+    wildcards: sample=HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+Activating conda environment: bcftools-1.19
+
+[Mon Sep 23 10:33:34 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    jobid: 15
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz; Code has changed since last execution
+    wildcards: sample=HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+Activating conda environment: bcftools-1.19
+
+[Mon Sep 23 10:33:34 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 9
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz; Code has changed since last execution
+    wildcards: sample=HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+Activating conda environment: bcftools-1.19
+[Mon Sep 23 10:33:34 2024]
+Finished job 6.
+1 of 13 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:33:34 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    jobid: 5
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+Activating conda environment: bedtools-2.31.1
+[Mon Sep 23 10:33:34 2024]
+Finished job 12.
+2 of 13 steps (15%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:33:34 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    jobid: 11
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+Activating conda environment: bedtools-2.31.1
+[Mon Sep 23 10:33:34 2024]
+Finished job 9.
+3 of 13 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:33:34 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    jobid: 8
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+Activating conda environment: bedtools-2.31.1
+[Mon Sep 23 10:33:35 2024]
+Finished job 15.
+4 of 13 steps (31%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:33:35 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+    jobid: 14
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+Activating conda environment: bedtools-2.31.1
+[Mon Sep 23 10:33:35 2024]
+Finished job 5.
+5 of 13 steps (38%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:33:35 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    jobid: 4
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    wildcards: sample=HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+[Mon Sep 23 10:33:35 2024]
+Finished job 11.
+6 of 13 steps (46%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:33:35 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    jobid: 10
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    wildcards: sample=HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+[Mon Sep 23 10:33:35 2024]
+Finished job 4.
+7 of 13 steps (54%) done
+[Mon Sep 23 10:33:35 2024]
+Finished job 8.
+8 of 13 steps (62%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:33:35 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    jobid: 7
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    wildcards: sample=HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+[Mon Sep 23 10:33:35 2024]
+Finished job 10.
+9 of 13 steps (69%) done
+[Mon Sep 23 10:33:35 2024]
+Finished job 7.
+10 of 13 steps (77%) done
+[Mon Sep 23 10:33:35 2024]
+Finished job 14.
+11 of 13 steps (85%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:33:35 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    jobid: 13
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+    wildcards: sample=HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+[Mon Sep 23 10:33:35 2024]
+Finished job 13.
+12 of 13 steps (92%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:33:35 2024]
+localrule get_plot_files_rule:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    jobid: 0
+    reason: Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    resources: tmpdir=/tmp
+
+Activating conda environment: iPython-8.15.0
+[Mon Sep 23 10:33:38 2024]
+Finished job 0.
+13 of 13 steps (100%) done
+Complete log: .snakemake/log/2024-09-23T103331.114748.snakemake.log

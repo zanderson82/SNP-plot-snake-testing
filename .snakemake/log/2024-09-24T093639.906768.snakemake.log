@@ -1,0 +1,75 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                          count
+-------------------------  -------
+all                              1
+bcftools_view                    5
+delete_filtered_annot_vcf        1
+get_plot_files_rule              1
+make_SNP_plot                    1
+vcf_annotate                     5
+vcf_filter                       5
+total                           19
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Sep 24 09:36:42 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    jobid: 17
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+Activating conda environment: bcftools-1.19
+
+[Tue Sep 24 09:36:42 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 5
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+Activating conda environment: bcftools-1.19
+[Tue Sep 24 09:36:42 2024]
+Error in rule bcftools_view:
+    jobid: 17
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    conda-env: bcftools-1.19
+    shell:
+        
+            bcftools view -R config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz.tmp
+            bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz.tmp 
+            mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+            bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Tue Sep 24 09:36:42 2024]
+Error in rule bcftools_view:
+    jobid: 5
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    conda-env: bcftools-1.19
+    shell:
+        
+            bcftools view -R config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp
+            bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp 
+            mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+            bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-24T093639.906768.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,232 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+bcftools_view              5
+get_plot_files_rule        1
+make_SNP_plot              1
+vcf_annotate               5
+vcf_filter                 5
+total                     18
+
+Resources before job selection: {'_cores': 10, '_nodes': 9223372036854775807}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (5)
+Resources after job selection: {'_cores': 5, '_nodes': 9223372036854775802}
+Execute 5 jobs...
+
+[Wed Sep  4 11:32:00 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 8
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp
+           bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp 
+           mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+           bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+
+[Wed Sep  4 11:32:00 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 11
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp
+           bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp 
+           mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+           bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+
+[Wed Sep  4 11:32:00 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 14
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp
+           bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp 
+           mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+           bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+
+[Wed Sep  4 11:32:00 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    jobid: 17
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz.tmp
+           bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz.tmp 
+           mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+           bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+
+[Wed Sep  4 11:32:00 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 5
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp
+           bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp 
+           mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+           bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+Completion of job ['bcftools_view'] reported to scheduler.
+jobs registered as running before removal {bcftools_view, bcftools_view, bcftools_view, bcftools_view, bcftools_view}
+[Wed Sep  4 11:32:00 2024]
+Finished job 11.
+1 of 18 steps (6%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775803}
+Completion of job ['bcftools_view'] reported to scheduler.
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 5, '_nodes': 9223372036854775802}
+Execute 1 jobs...
+
+[Wed Sep  4 11:32:00 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    jobid: 10
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz; Code has changed since last execution
+    wildcards: sample=HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+unlocking
+removing lock
+removing lock
+removed all locks
+Completion of job ['bcftools_view'] reported to scheduler.
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/utils.py", line 427, in format
+    return fmt.format(_pattern, *args, **variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 190, in format
+    return self.vformat(format_string, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 194, in vformat
+    result, _ = self._vformat(format_string, args, kwargs, used_args, 2)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 234, in _vformat
+    obj, arg_used = self.get_field(field_name, args, kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 299, in get_field
+    obj = self.get_value(first, args, kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 256, in get_value
+    return kwargs[key]
+           ~~~~~~^^^^^
+KeyError: 'OFS="\t"'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 948, in format_wildcards
+    return format(string, **_variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/utils.py", line 437, in format
+    raise NameError(
+NameError: The name 'OFS="\t"' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1248, in execute
+    raise e
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1244, in execute
+    success = self.scheduler.schedule()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/scheduler.py", line 313, in schedule
+    self.run(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/scheduler.py", line 406, in run
+    executor.run_jobs(jobs)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 71, in run_jobs
+    self.run_job_pre(job)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 86, in run_job_pre
+    self.printjob(job)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 110, in printjob
+    job.log_info()
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 1042, in log_info
+    logger.shellcmd(self.shellcmd, indent=indent)
+                    ^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 601, in shellcmd
+    self.format_wildcards(self.rule.shellcmd)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 950, in format_wildcards
+    raise RuleException(
+snakemake.exceptions.RuleException: NameError: The name 'OFS="\t"' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        unzipped_vcf="/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/{wildcards.sample}.unzipped.vcf"
+
+        # Add header to the VCF file
+        (echo -e "CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE	GENE	EXON"; zcat {input.parsed_vcf}) > $unzipped_vcf
+
+        # Check if the unzipped VCF file was created
+        if [ ! -f $unzipped_vcf ]; then
+            echo "Error: $unzipped_vcf not created"
+            exit 1
+        fi
+
+        # Perform intersection with annotation file and format the output
+        bedtools intersect -a $unzipped_vcf -b {params.annotation_file} -wa -wb |         awk 'BEGIN {OFS="	"} {print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $15, $16}' > {output.annotated_vcf}
+
+        
+
+RuleException in rule vcf_annotate in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/parsed-vcf-annotate.smk, line 1:
+NameError: The name 'OFS="\t"' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        unzipped_vcf="/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/{wildcards.sample}.unzipped.vcf"
+
+        # Add header to the VCF file
+        (echo -e "CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE	GENE	EXON"; zcat {input.parsed_vcf}) > $unzipped_vcf
+
+        # Check if the unzipped VCF file was created
+        if [ ! -f $unzipped_vcf ]; then
+            echo "Error: $unzipped_vcf not created"
+            exit 1
+        fi
+
+        # Perform intersection with annotation file and format the output
+        bedtools intersect -a $unzipped_vcf -b {params.annotation_file} -wa -wb |         awk 'BEGIN {OFS="	"} {print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $15, $16}' > {output.annotated_vcf}
+
+        

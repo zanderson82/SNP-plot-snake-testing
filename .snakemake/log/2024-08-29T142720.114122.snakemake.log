@@ -1,0 +1,288 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+bcftools_view              3
+get_plot_files_rule        1
+get_target_names           1
+make_SNP_plot              1
+vcf_annotate               3
+vcf_filter                 3
+total                     13
+
+Resources before job selection: {'_cores': 128, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 127, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Aug 29 14:27:20 2024]
+localrule get_target_names:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100, /n/zanderson/SNP-plot-snake-testing/config/targets.txt
+    output: /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt
+    jobid: 6
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt
+    resources: tmpdir=/tmp
+
+Activating conda environment: iPython-8.15.0
+Completion of job ['get_target_names'] reported to scheduler.
+jobs registered as running before removal {get_target_names}
+[Thu Aug 29 14:27:21 2024]
+Finished job 6.
+1 of 13 steps (8%) done
+Resources before job selection: {'_cores': 128, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 125, '_nodes': 9223372036854775804}
+Execute 3 jobs...
+
+[Thu Aug 29 14:27:21 2024]
+localrule bcftools_view:
+    input: /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+    jobid: 5
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt
+    wildcards: sample=HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as. 
+        
+Activating conda environment: bcftools-1.19
+
+[Thu Aug 29 14:27:21 2024]
+localrule bcftools_view:
+    input: /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    jobid: 12
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt
+    wildcards: sample=HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as. 
+        
+Activating conda environment: bcftools-1.19
+
+[Thu Aug 29 14:27:21 2024]
+localrule bcftools_view:
+    input: /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    jobid: 9
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt
+    wildcards: sample=HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as. 
+        
+Activating conda environment: bcftools-1.19
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk", line 35, in __rule_bcftools_view
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as.' returned non-zero exit status 1.
+
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk", line 35, in __rule_bcftools_view
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as.' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 11:
+Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as.' returned non-zero exit status 1.
+
+RuleException:
+CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 11:
+Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as.' returned non-zero exit status 1.
+[Thu Aug 29 14:27:21 2024]
+Error in rule bcftools_view:
+    jobid: 9
+    input: /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    conda-env: bcftools-1.19
+    shell:
+        
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as. 
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk", line 35, in __rule_bcftools_view
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as.' returned non-zero exit status 1.
+
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk", line 35, in __rule_bcftools_view
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as.' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 11:
+Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as.' returned non-zero exit status 1.
+
+RuleException:
+CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 11:
+Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as.' returned non-zero exit status 1.
+[Thu Aug 29 14:27:21 2024]
+Error in rule bcftools_view:
+    jobid: 5
+    input: /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+    conda-env: bcftools-1.19
+    shell:
+        
+        while read -r sample; do
+            output_file=$(basename "$sample" PMDV_FINAL_phased.vcf.gz).PMDV_FINAL_parsed.vcf
+            bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt "$sample" | bgzip > /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+            bcftools index /n/zanderson/SNP-plot-snake/parsed-VCFs/$output_file
+        done < /n/zanderson/SNP-plot-snake-testing/config/input_vcf_list.txt ##this line tells it which file to read. Sample is what the the entries are being saved as. 
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Completion of job ['bcftools_view'] reported to scheduler.
+Waiting at most 5 seconds for missing files.
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 673, in check_and_touch_output
+    await wait_for_files(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/io.py", line 985, in wait_for_files
+    raise IOError(
+OSError: Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf (missing locally, parent dir contents: HG02409-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf, HG03861-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf, GM18876-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf, GM18876-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.csi, HG02409-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.csi, HG03861-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.csi)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 1133, in postprocess
+    await self.dag.check_and_touch_output(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 680, in check_and_touch_output
+    raise MissingOutputException(
+snakemake.exceptions.MissingOutputException: Job 12  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf (missing locally, parent dir contents: HG02409-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf, HG03861-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf, GM18876-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf, GM18876-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.csi, HG02409-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.csi, HG03861-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.csi)
+
+MissingOutputException in rule bcftools_view in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 1:
+Job 12  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf (missing locally, parent dir contents: HG02409-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf, HG03861-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf, GM18876-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf, GM18876-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.csi, HG02409-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.csi, HG03861-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.csi)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-08-29T142720.114122.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

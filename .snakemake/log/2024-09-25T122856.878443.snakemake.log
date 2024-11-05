@@ -1,0 +1,108 @@
+Building DAG of jobs...
+File path /n/alignments/unsolved//M1009-NP-WGS-unsolved-SKD-ZTTK/M1009-NP-WGS-unsolved-SKD-ZTTK.guppy646.sup.withMeth.pass.hg38.clair3.phased.vcf.gz contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /n/alignments/unsolved//M1009-NP-WGS-unsolved-SKD-ZTTK/M1009-NP-WGS-unsolved-SKD-ZTTK.guppy646.sup.withMeth.pass.hg38.clair3.phased.vcf.gz contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+bcftools_view              1
+get_plot_files_rule        1
+make_SNP_plot              1
+vcf_annotate               1
+vcf_filter                 1
+total                      6
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep 25 12:28:58 2024]
+localrule bcftools_view:
+    input: /n/alignments/unsolved//M1009-NP-WGS-unsolved-SKD-ZTTK/M1009-NP-WGS-unsolved-SKD-ZTTK.guppy646.sup.withMeth.pass.hg38.clair3.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.parsed.vcf.gz
+    jobid: 5
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.parsed.vcf.gz
+    wildcards: sample=M1009-NP-WGS-unsolved-SKD-ZTTK
+    resources: tmpdir=/tmp
+
+Activating conda environment: bcftools-1.19
+[Wed Sep 25 12:28:59 2024]
+Finished job 5.
+1 of 6 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep 25 12:28:59 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.annotated.vcf
+    jobid: 4
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.parsed.vcf.gz
+    wildcards: sample=M1009-NP-WGS-unsolved-SKD-ZTTK
+    resources: tmpdir=/tmp
+
+Activating conda environment: bedtools-2.31.1
+[Wed Sep 25 12:29:00 2024]
+Finished job 4.
+2 of 6 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep 25 12:29:00 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.annotated.filtered.bed
+    jobid: 3
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.annotated.vcf
+    wildcards: sample=M1009-NP-WGS-unsolved-SKD-ZTTK
+    resources: tmpdir=/tmp
+
+[Wed Sep 25 12:29:00 2024]
+Finished job 3.
+3 of 6 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep 25 12:29:00 2024]
+localrule get_plot_files_rule:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    jobid: 2
+    reason: Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/M1009-NP-WGS-unsolved-SKD-ZTTK.annotated.filtered.bed; Set of input files has changed since last execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: iPython-8.15.0
+[Wed Sep 25 12:29:00 2024]
+Finished job 2.
+4 of 6 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep 25 12:29:00 2024]
+localrule make_SNP_plot:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/OPN1LW_OPN1MW_M1009-SNP-PLOT.svg
+    jobid: 1
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/OPN1LW_OPN1MW_M1009-SNP-PLOT.svg; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    resources: tmpdir=/tmp
+
+Activating conda environment: Rtools-1.1
+[Wed Sep 25 12:29:12 2024]
+Finished job 1.
+5 of 6 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep 25 12:29:12 2024]
+localrule all:
+    input: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/OPN1LW_OPN1MW_M1009-SNP-PLOT.svg, /n/alignments/unsolved//M1009-NP-WGS-unsolved-SKD-ZTTK/M1009-NP-WGS-unsolved-SKD-ZTTK.guppy646.sup.withMeth.pass.hg38.clair3.phased.vcf.gz
+    jobid: 0
+    reason: Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/OPN1LW_OPN1MW_M1009-SNP-PLOT.svg
+    resources: tmpdir=/tmp
+
+[Wed Sep 25 12:29:12 2024]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2024-09-25T122856.878443.snakemake.log

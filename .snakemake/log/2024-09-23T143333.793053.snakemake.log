@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                          count
+-------------------------  -------
+all                              1
+delete_filtered_annot_vcf        1
+get_plot_files_rule              1
+make_SNP_plot                    1
+total                            4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 14:33:36 2024]
+localrule get_plot_files_rule:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    jobid: 2
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt; Updated input files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    resources: tmpdir=/tmp
+
+RuleException:
+WorkflowError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/get-plot-files-rule.smk, line 31:
+Failed to open source file /workflow/scripts/get-plot-files.py
+FileNotFoundError: [Errno 2] No such file or directory: '/workflow/scripts/get-plot-files.py'
+[Mon Sep 23 14:33:36 2024]
+Error in rule get_plot_files_rule:
+    jobid: 2
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    conda-env: iPython-8.15.0
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-23T143333.793053.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

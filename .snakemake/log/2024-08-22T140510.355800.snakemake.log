@@ -1,0 +1,55 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+make_SNP_plot        1
+vcf_filter           1
+total                3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Aug 22 14:05:12 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake/annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    jobid: 2
+    reason: Code has changed since last execution
+    wildcards: sample=HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+        awk '($6 >= 5 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake/annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf > /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+        
+[Thu Aug 22 14:05:12 2024]
+Finished job 2.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Aug 22 14:05:12 2024]
+localrule make_SNP_plot:
+    input: /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240822.svg
+    jobid: 1
+    reason: Missing output files: /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240822.svg; Input files updated by another job: /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /n/zanderson/SNP-plot-snake/workflow/rules/make-SNP-plot.smk, line 7:
+Command 'set -euo pipefail;  Rscript --vanilla /n/zanderson/SNP-plot-snake/.snakemake/scripts/tmp7e83cs3u.SNP-plot.R' returned non-zero exit status 127.
+[Thu Aug 22 14:05:12 2024]
+Error in rule make_SNP_plot:
+    jobid: 1
+    input: /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240822.svg
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-08-22T140510.355800.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

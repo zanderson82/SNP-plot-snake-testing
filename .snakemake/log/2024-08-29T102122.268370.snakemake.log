@@ -1,0 +1,114 @@
+Building DAG of jobs...
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 2070, in collect_potential_dependencies
+    yield PotentialDependency(file, known_producers[file], True)
+                                    ~~~~~~~~~~~~~~~^^^^^^
+KeyError: '/n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/file_list.txt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 183, in new
+    obj = self.cache[key]
+          ~~~~~~~~~~^^^^^
+KeyError: ('get_plot_files_rule',)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/io.py", line 1071, in format_match
+    value = wildcards[name]
+            ~~~~~~~~~^^^^^^
+KeyError: 'sample'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/rules.py", line 795, in expand_input
+    incomplete = self._apply_wildcards(
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/rules.py", line 766, in _apply_wildcards
+    concrete = concretize(item_, wildcards, _is_callable)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/rules.py", line 785, in concretize_iofile
+    return f.apply_wildcards(wildcards)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/io.py", line 808, in apply_wildcards
+    apply_wildcards(f, wildcards),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/io.py", line 1076, in apply_wildcards
+    return WILDCARD_REGEX.sub(format_match, pattern)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/io.py", line 1074, in format_match
+    raise WildcardError(str(ex))
+snakemake.exceptions.WildcardError: 'sample'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1081, in execute
+    self._build_dag()
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1037, in _build_dag
+    async_run(self.dag.init())
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/common/__init__.py", line 94, in async_run
+    return asyncio.run(coroutine)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 179, in init
+    job = await self.update([job], progress=progress, create_inventory=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1013, in update
+    raise exceptions[0]
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 970, in update
+    await self.update_(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1109, in update_
+    raise ex
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1092, in update_
+    selected_job = await self.update(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1013, in update
+    raise exceptions[0]
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 970, in update
+    await self.update_(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1055, in update_
+    potential_dependencies = [
+                             ^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 2088, in collect_potential_dependencies
+    await file2jobs(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 2181, in file2jobs
+    await self.new_job(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/dag.py", line 1927, in new_job
+    job = await self.job_factory.new(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 185, in new
+    obj = await new()
+          ^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 158, in new
+    obj = new_job()
+          ^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 151, in <lambda>
+    new_job = lambda: Job(
+                      ^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 254, in __init__
+    ) = self.rule.expand_input(self.wildcards_dict, groupid=groupid)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/rules.py", line 807, in expand_input
+    raise WildcardError(
+snakemake.exceptions.WildcardError: Wildcards in input files cannot be determined from output files: (rule get_plot_files_rule, line 12, /n/zanderson/SNP-plot-snake/workflow/rules/get-plot-files-rule.smk)
+'sample'
+
+WildcardError in rule get_plot_files_rule in file /n/zanderson/SNP-plot-snake/workflow/rules/get-plot-files-rule.smk, line 12:
+Wildcards in input files cannot be determined from output files: (rule get_plot_files_rule, line 12, /n/zanderson/SNP-plot-snake/workflow/rules/get-plot-files-rule.smk)
+'sample'

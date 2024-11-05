@@ -1,0 +1,216 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+get_plot_files_rule        1
+make_SNP_plot              1
+vcf_filter                 3
+total                      6
+
+Resources before job selection: {'_cores': 128, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 125, '_nodes': 9223372036854775804}
+Execute 3 jobs...
+
+[Thu Aug 29 15:12:52 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    jobid: 9
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    wildcards: sample=HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        awk '($6 >= 5 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf > /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+        
+
+[Thu Aug 29 15:12:52 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    jobid: 6
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    wildcards: sample=HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        awk '($6 >= 5 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf > /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+        
+
+[Thu Aug 29 15:12:52 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    jobid: 3
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    wildcards: sample=HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+        awk '($6 >= 5 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf > /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+        
+Completion of job ['vcf_filter'] reported to scheduler.
+jobs registered as running before removal {vcf_filter, vcf_filter, vcf_filter}
+[Thu Aug 29 15:12:52 2024]
+Finished job 9.
+1 of 6 steps (17%) done
+Completion of job ['vcf_filter'] reported to scheduler.
+jobs registered as running before removal {vcf_filter, vcf_filter}
+[Thu Aug 29 15:12:52 2024]
+Finished job 6.
+2 of 6 steps (33%) done
+Completion of job ['vcf_filter'] reported to scheduler.
+jobs registered as running before removal {vcf_filter}
+[Thu Aug 29 15:12:52 2024]
+Finished job 3.
+3 of 6 steps (50%) done
+Resources before job selection: {'_cores': 128, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 127, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Aug 29 15:12:52 2024]
+localrule get_plot_files_rule:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    jobid: 2
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    resources: tmpdir=/tmp
+
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 452, in _open
+    return open(path_or_uri, mode, encoding=None if "b" in mode else encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 177, in open
+    fobj = _shortcut_open(
+           ^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 363, in _shortcut_open
+    return _builtin_open(local_path, mode, buffering=buffering, **open_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/n/zanderson/SNP-plot-snake-testing/workflow/scripts/write_samples_to_file.py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/get-plot-files-rule.smk", line 44, in __rule_get_plot_files_rule
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 1516, in script
+    path, source, language, is_local, cache_path = get_source(
+                                                   ^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 1438, in get_source
+    with sourcecache.open(source_file) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 366, in open
+    cache_entry = self._cache(source_file)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 397, in _cache
+    self._do_cache(source_file, cache_entry)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 402, in _do_cache
+    with self._open_local_or_remote(source_file, "rb") as source:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 431, in _open_local_or_remote
+    return self._open(source_file, mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 454, in _open
+    raise WorkflowError(f"Failed to open source file {path_or_uri}", e)
+snakemake_interface_common.exceptions.WorkflowError: Failed to open source file /n/zanderson/SNP-plot-snake-testing/workflow/scripts/write_samples_to_file.py
+FileNotFoundError: [Errno 2] No such file or directory: '/n/zanderson/SNP-plot-snake-testing/workflow/scripts/write_samples_to_file.py'
+
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 452, in _open
+    return open(path_or_uri, mode, encoding=None if "b" in mode else encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 177, in open
+    fobj = _shortcut_open(
+           ^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 363, in _shortcut_open
+    return _builtin_open(local_path, mode, buffering=buffering, **open_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/n/zanderson/SNP-plot-snake-testing/workflow/scripts/write_samples_to_file.py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/get-plot-files-rule.smk", line 44, in __rule_get_plot_files_rule
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 1516, in script
+    path, source, language, is_local, cache_path = get_source(
+                                                   ^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 1438, in get_source
+    with sourcecache.open(source_file) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 366, in open
+    cache_entry = self._cache(source_file)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 397, in _cache
+    self._do_cache(source_file, cache_entry)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 402, in _do_cache
+    with self._open_local_or_remote(source_file, "rb") as source:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 431, in _open_local_or_remote
+    return self._open(source_file, mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/sourcecache.py", line 454, in _open
+    raise WorkflowError(f"Failed to open source file {path_or_uri}", e)
+snakemake_interface_common.exceptions.WorkflowError: Failed to open source file /n/zanderson/SNP-plot-snake-testing/workflow/scripts/write_samples_to_file.py
+FileNotFoundError: [Errno 2] No such file or directory: '/n/zanderson/SNP-plot-snake-testing/workflow/scripts/write_samples_to_file.py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: WorkflowError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/get-plot-files-rule.smk, line 31:
+Failed to open source file /n/zanderson/SNP-plot-snake-testing/workflow/scripts/write_samples_to_file.py
+FileNotFoundError: [Errno 2] No such file or directory: '/n/zanderson/SNP-plot-snake-testing/workflow/scripts/write_samples_to_file.py'
+
+RuleException:
+WorkflowError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/get-plot-files-rule.smk, line 31:
+Failed to open source file /n/zanderson/SNP-plot-snake-testing/workflow/scripts/write_samples_to_file.py
+FileNotFoundError: [Errno 2] No such file or directory: '/n/zanderson/SNP-plot-snake-testing/workflow/scripts/write_samples_to_file.py'
+[Thu Aug 29 15:12:52 2024]
+Error in rule get_plot_files_rule:
+    jobid: 2
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    conda-env: iPython-8.15.0
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-08-29T151251.218996.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

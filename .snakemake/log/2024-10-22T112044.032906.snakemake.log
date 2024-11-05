@@ -1,0 +1,62 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                          count
+-------------------------  -------
+all                              1
+delete_filtered_annot_vcf        1
+make_SNP_plot                    1
+total                            3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Oct 22 11:20:44 2024]
+localrule make_SNP_plot:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/Canavan-SNP-PLOT.svg
+    jobid: 1
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/Canavan-SNP-PLOT.svg; Updated input files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    resources: tmpdir=/tmp
+
+Activating conda environment: Rtools-1.1
+[Tue Oct 22 11:21:04 2024]
+Finished job 1.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Oct 22 11:21:04 2024]
+localrule delete_filtered_annot_vcf:
+    input: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/Canavan-SNP-PLOT.svg
+    output: deletion_done.flag
+    jobid: 6
+    reason: Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/Canavan-SNP-PLOT.svg
+    resources: tmpdir=/tmp
+
+
+        rm -f annotated-VCFs/HG*
+        rm -f filtered-annotated-VCFs/*.annotated.filtered.bed
+        rm -f filtered-annotated-VCFs/file_list.txt
+        rm -f parsed-VCFs/HG*
+        touch deletion_done.flag
+        
+[Tue Oct 22 11:21:04 2024]
+Finished job 6.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Oct 22 11:21:04 2024]
+localrule all:
+    input: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/Canavan-SNP-PLOT.svg, /n/alignments/ASPA_CHOP/RDN0272-00_PacBio_aspa_canavan_wgs/RDN0272-00_PacBio_aspa_canavan_wgs.vcf.gz, deletion_done.flag
+    jobid: 0
+    reason: Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/Canavan-SNP-PLOT.svg, deletion_done.flag
+    resources: tmpdir=/tmp
+
+[Tue Oct 22 11:21:04 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2024-10-22T112044.032906.snakemake.log

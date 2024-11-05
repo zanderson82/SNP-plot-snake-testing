@@ -1,0 +1,553 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+bcftools_view              5
+get_plot_files_rule        1
+make_SNP_plot              1
+vcf_annotate               5
+vcf_filter                 5
+total                     18
+
+Resources before job selection: {'_cores': 10, '_nodes': 9223372036854775807}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (5)
+Resources after job selection: {'_cores': 5, '_nodes': 9223372036854775802}
+Execute 5 jobs...
+
+[Wed Sep  4 11:41:10 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 8
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp
+           bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp 
+           mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+           bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+
+[Wed Sep  4 11:41:10 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 11
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp
+           bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp 
+           mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+           bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+
+[Wed Sep  4 11:41:10 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 14
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp
+           bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp 
+           mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+           bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+
+[Wed Sep  4 11:41:10 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    jobid: 17
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz.tmp
+           bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz.tmp 
+           mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+           bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+
+[Wed Sep  4 11:41:10 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    jobid: 5
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    wildcards: sample=HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp
+           bgzip /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp 
+           mv /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.tmp.gz /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+           bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+        
+Activating conda environment: bcftools-1.19
+Completion of job ['bcftools_view'] reported to scheduler.
+Completion of job ['bcftools_view'] reported to scheduler.
+Completion of job ['bcftools_view'] reported to scheduler.
+jobs registered as running before removal {bcftools_view, bcftools_view, bcftools_view, bcftools_view, bcftools_view}
+[Wed Sep  4 11:41:10 2024]
+Finished job 14.
+1 of 18 steps (6%) done
+jobs registered as running before removal {bcftools_view, bcftools_view, bcftools_view, bcftools_view}
+[Wed Sep  4 11:41:10 2024]
+Finished job 5.
+2 of 18 steps (11%) done
+jobs registered as running before removal {bcftools_view, bcftools_view, bcftools_view}
+[Wed Sep  4 11:41:10 2024]
+Finished job 17.
+3 of 18 steps (17%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (3)
+Select jobs to execute...
+Completion of job ['bcftools_view'] reported to scheduler.
+Completion of job ['bcftools_view'] reported to scheduler.
+Selected jobs (3)
+Resources after job selection: {'_cores': 5, '_nodes': 9223372036854775802}
+Execute 3 jobs...
+
+[Wed Sep  4 11:41:10 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+    jobid: 16
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz; Code has changed since last execution
+    wildcards: sample=HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+        unzipped_vcf="/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.unzipped.vcf"
+        annotated_vcf_temp="/n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf.temp"
+        
+        zcat /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz > $unzipped_vcf
+
+        # Check if the unzipped VCF file was created
+        if [ ! -f $unzipped_vcf ]; then
+            echo "Error: $unzipped_vcf not created"
+            exit 1
+        fi
+
+        # Perform intersection with annotation file and format the output
+        bedtools intersect -a $unzipped_vcf -b /n/zanderson/SNP-plot-snake-testing/3_ENSEMBL_CANONICAL_EXON_in_PROTEIN_CODING_GENE_minus_UTR_gencode.v45.annotation.gtf -wa -wb |         awk 'BEGIN {OFS="	"} {print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $15, $16}' > $annotated_vcf_temp
+
+        (echo -e "CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE	GENE	EXON"; cat $annotated_vcf_temp) > /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+        rm $annotated_vcf_temp
+        
+Activating conda environment: bedtools-2.31.1
+
+[Wed Sep  4 11:41:10 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    jobid: 13
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz; Code has changed since last execution
+    wildcards: sample=HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        unzipped_vcf="/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.unzipped.vcf"
+        annotated_vcf_temp="/n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf.temp"
+        
+        zcat /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz > $unzipped_vcf
+
+        # Check if the unzipped VCF file was created
+        if [ ! -f $unzipped_vcf ]; then
+            echo "Error: $unzipped_vcf not created"
+            exit 1
+        fi
+
+        # Perform intersection with annotation file and format the output
+        bedtools intersect -a $unzipped_vcf -b /n/zanderson/SNP-plot-snake-testing/3_ENSEMBL_CANONICAL_EXON_in_PROTEIN_CODING_GENE_minus_UTR_gencode.v45.annotation.gtf -wa -wb |         awk 'BEGIN {OFS="	"} {print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $15, $16}' > $annotated_vcf_temp
+
+        (echo -e "CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE	GENE	EXON"; cat $annotated_vcf_temp) > /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+        rm $annotated_vcf_temp
+        
+Activating conda environment: bedtools-2.31.1
+
+[Wed Sep  4 11:41:10 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    jobid: 4
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz; Code has changed since last execution
+    wildcards: sample=HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        unzipped_vcf="/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.unzipped.vcf"
+        annotated_vcf_temp="/n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf.temp"
+        
+        zcat /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz > $unzipped_vcf
+
+        # Check if the unzipped VCF file was created
+        if [ ! -f $unzipped_vcf ]; then
+            echo "Error: $unzipped_vcf not created"
+            exit 1
+        fi
+
+        # Perform intersection with annotation file and format the output
+        bedtools intersect -a $unzipped_vcf -b /n/zanderson/SNP-plot-snake-testing/3_ENSEMBL_CANONICAL_EXON_in_PROTEIN_CODING_GENE_minus_UTR_gencode.v45.annotation.gtf -wa -wb |         awk 'BEGIN {OFS="	"} {print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $15, $16}' > $annotated_vcf_temp
+
+        (echo -e "CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE	GENE	EXON"; cat $annotated_vcf_temp) > /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+        rm $annotated_vcf_temp
+        
+Activating conda environment: bedtools-2.31.1
+jobs registered as running before removal {vcf_annotate, bcftools_view, vcf_annotate, bcftools_view, vcf_annotate}
+[Wed Sep  4 11:41:10 2024]
+Finished job 8.
+4 of 18 steps (22%) done
+jobs registered as running before removal {vcf_annotate, vcf_annotate, bcftools_view, vcf_annotate}
+[Wed Sep  4 11:41:10 2024]
+Finished job 11.
+5 of 18 steps (28%) done
+Resources before job selection: {'_cores': 7, '_nodes': 9223372036854775804}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 5, '_nodes': 9223372036854775802}
+Execute 2 jobs...
+
+[Wed Sep  4 11:41:10 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    jobid: 10
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz; Code has changed since last execution
+    wildcards: sample=HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        unzipped_vcf="/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.unzipped.vcf"
+        annotated_vcf_temp="/n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf.temp"
+        
+        zcat /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz > $unzipped_vcf
+
+        # Check if the unzipped VCF file was created
+        if [ ! -f $unzipped_vcf ]; then
+            echo "Error: $unzipped_vcf not created"
+            exit 1
+        fi
+
+        # Perform intersection with annotation file and format the output
+        bedtools intersect -a $unzipped_vcf -b /n/zanderson/SNP-plot-snake-testing/3_ENSEMBL_CANONICAL_EXON_in_PROTEIN_CODING_GENE_minus_UTR_gencode.v45.annotation.gtf -wa -wb |         awk 'BEGIN {OFS="	"} {print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $15, $16}' > $annotated_vcf_temp
+
+        (echo -e "CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE	GENE	EXON"; cat $annotated_vcf_temp) > /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+        rm $annotated_vcf_temp
+        
+Activating conda environment: bedtools-2.31.1
+
+[Wed Sep  4 11:41:10 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    jobid: 7
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz; Code has changed since last execution
+    wildcards: sample=HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        unzipped_vcf="/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.unzipped.vcf"
+        annotated_vcf_temp="/n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf.temp"
+        
+        zcat /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz > $unzipped_vcf
+
+        # Check if the unzipped VCF file was created
+        if [ ! -f $unzipped_vcf ]; then
+            echo "Error: $unzipped_vcf not created"
+            exit 1
+        fi
+
+        # Perform intersection with annotation file and format the output
+        bedtools intersect -a $unzipped_vcf -b /n/zanderson/SNP-plot-snake-testing/3_ENSEMBL_CANONICAL_EXON_in_PROTEIN_CODING_GENE_minus_UTR_gencode.v45.annotation.gtf -wa -wb |         awk 'BEGIN {OFS="	"} {print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $15, $16}' > $annotated_vcf_temp
+
+        (echo -e "CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE	GENE	EXON"; cat $annotated_vcf_temp) > /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+        rm $annotated_vcf_temp
+        
+Activating conda environment: bedtools-2.31.1
+Completion of job ['vcf_annotate'] reported to scheduler.
+jobs registered as running before removal {vcf_annotate, vcf_annotate, vcf_annotate, vcf_annotate, vcf_annotate}
+[Wed Sep  4 11:41:10 2024]
+Finished job 4.
+6 of 18 steps (33%) done
+Removing temporary output /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775803}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 5, '_nodes': 9223372036854775802}
+Execute 1 jobs...
+
+[Wed Sep  4 11:41:10 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    jobid: 3
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    wildcards: sample=HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        awk 'BEGIN {OFS="	"} ($6 >= 5 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf > /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+        
+Completion of job ['vcf_annotate'] reported to scheduler.
+jobs registered as running before removal {vcf_annotate, vcf_annotate, vcf_annotate, vcf_annotate, vcf_filter}
+[Wed Sep  4 11:41:10 2024]
+Finished job 13.
+7 of 18 steps (39%) done
+Removing temporary output /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775803}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 5, '_nodes': 9223372036854775802}
+Execute 1 jobs...
+
+[Wed Sep  4 11:41:10 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    jobid: 12
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    wildcards: sample=HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        awk 'BEGIN {OFS="	"} ($6 >= 5 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf > /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+        
+Completion of job ['vcf_filter'] reported to scheduler.
+jobs registered as running before removal {vcf_annotate, vcf_filter, vcf_annotate, vcf_annotate, vcf_filter}
+[Wed Sep  4 11:41:10 2024]
+Finished job 3.
+8 of 18 steps (44%) done
+Completion of job ['vcf_filter'] reported to scheduler.
+jobs registered as running before removal {vcf_annotate, vcf_filter, vcf_annotate, vcf_annotate}
+[Wed Sep  4 11:41:10 2024]
+Finished job 12.
+9 of 18 steps (50%) done
+Completion of job ['vcf_annotate'] reported to scheduler.
+Completion of job ['vcf_annotate'] reported to scheduler.
+jobs registered as running before removal {vcf_annotate, vcf_annotate, vcf_annotate}
+[Wed Sep  4 11:41:11 2024]
+Finished job 7.
+10 of 18 steps (56%) done
+Removing temporary output /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.
+jobs registered as running before removal {vcf_annotate, vcf_annotate}
+[Wed Sep  4 11:41:11 2024]
+Finished job 10.
+11 of 18 steps (61%) done
+Removing temporary output /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf.gz.
+Resources before job selection: {'_cores': 9, '_nodes': 9223372036854775806}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (2)
+Completion of job ['vcf_annotate'] reported to scheduler.
+Resources after job selection: {'_cores': 7, '_nodes': 9223372036854775804}
+Execute 2 jobs...
+
+[Wed Sep  4 11:41:11 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    jobid: 9
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    wildcards: sample=HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        awk 'BEGIN {OFS="	"} ($6 >= 5 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf > /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+        
+
+[Wed Sep  4 11:41:11 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    jobid: 6
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    wildcards: sample=HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+        awk 'BEGIN {OFS="	"} ($6 >= 5 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf > /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+        
+jobs registered as running before removal {vcf_filter, vcf_annotate, vcf_filter}
+[Wed Sep  4 11:41:11 2024]
+Finished job 16.
+12 of 18 steps (67%) done
+Removing temporary output /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf.gz.
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Completion of job ['vcf_filter'] reported to scheduler.
+Resources after job selection: {'_cores': 7, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Wed Sep  4 11:41:11 2024]
+localrule vcf_filter:
+    input: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    jobid: 15
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf
+    wildcards: sample=HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+        awk 'BEGIN {OFS="	"} ($6 >= 5 && $7 == "PASS") || ($7 == "refCall")' /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.vcf > /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+        
+Completion of job ['vcf_filter'] reported to scheduler.
+jobs registered as running before removal {vcf_filter, vcf_filter, vcf_filter}
+[Wed Sep  4 11:41:11 2024]
+Finished job 9.
+13 of 18 steps (72%) done
+jobs registered as running before removal {vcf_filter, vcf_filter}
+[Wed Sep  4 11:41:11 2024]
+Finished job 6.
+14 of 18 steps (78%) done
+Completion of job ['vcf_filter'] reported to scheduler.
+jobs registered as running before removal {vcf_filter}
+[Wed Sep  4 11:41:11 2024]
+Finished job 15.
+15 of 18 steps (83%) done
+Resources before job selection: {'_cores': 10, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 9, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Wed Sep  4 11:41:11 2024]
+localrule get_plot_files_rule:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed
+    output: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    jobid: 2
+    reason: Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00706-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG02282-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG03563-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed, /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/HG04216-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.filtered.bed
+    resources: tmpdir=/tmp
+
+Activating conda environment: iPython-8.15.0
+Completion of job ['get_plot_files_rule'] reported to scheduler.
+jobs registered as running before removal {get_plot_files_rule}
+[Wed Sep  4 11:41:12 2024]
+Finished job 2.
+16 of 18 steps (89%) done
+Resources before job selection: {'_cores': 10, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 9, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Wed Sep  4 11:41:12 2024]
+localrule make_SNP_plot:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/SNP-plot-20240903.svg
+    jobid: 1
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/SNP-plot-20240903.svg; Input files updated by another job: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    resources: tmpdir=/tmp
+
+Activating conda environment: Rtools-1.1
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/make-SNP-plot.smk", line 27, in __rule_make_SNP_plot
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 1563, in script
+    executor.evaluate()
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 454, in evaluate
+    self.execute_script(fd.name, edit=edit)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 833, in execute_script
+    self._execute_cmd("Rscript --vanilla {fname:q}", fname=fname)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 482, in _execute_cmd
+    return shell(
+           ^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'Rtools-1.1'; set -euo pipefail;  Rscript --vanilla /n/zanderson/SNP-plot-snake-testing/.snakemake/scripts/tmpehh57moi.SNP-plot.R' returned non-zero exit status 1.
+
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/make-SNP-plot.smk", line 27, in __rule_make_SNP_plot
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 1563, in script
+    executor.evaluate()
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 454, in evaluate
+    self.execute_script(fd.name, edit=edit)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 833, in execute_script
+    self._execute_cmd("Rscript --vanilla {fname:q}", fname=fname)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/script/__init__.py", line 482, in _execute_cmd
+    return shell(
+           ^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'Rtools-1.1'; set -euo pipefail;  Rscript --vanilla /n/zanderson/SNP-plot-snake-testing/.snakemake/scripts/tmpehh57moi.SNP-plot.R' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/make-SNP-plot.smk, line 11:
+Command 'source /usr/bin/activate 'Rtools-1.1'; set -euo pipefail;  Rscript --vanilla /n/zanderson/SNP-plot-snake-testing/.snakemake/scripts/tmpehh57moi.SNP-plot.R' returned non-zero exit status 1.
+
+RuleException:
+CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/make-SNP-plot.smk, line 11:
+Command 'source /usr/bin/activate 'Rtools-1.1'; set -euo pipefail;  Rscript --vanilla /n/zanderson/SNP-plot-snake-testing/.snakemake/scripts/tmpehh57moi.SNP-plot.R' returned non-zero exit status 1.
+[Wed Sep  4 11:41:14 2024]
+Error in rule make_SNP_plot:
+    jobid: 1
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/SNP-plot-20240903.svg
+    conda-env: Rtools-1.1
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-04T114108.513245.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                          count
+-------------------------  -------
+delete_filtered_annot_vcf        1
+make_SNP_plot                    1
+total                            2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 23 10:34:34 2024]
+localrule make_SNP_plot:
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/HYDIN-SNP-PLOT.svg
+    jobid: 1
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/HYDIN-SNP-PLOT.svg
+    resources: tmpdir=/tmp
+
+Activating conda environment: Rtools-1.1
+RuleException:
+CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/make-SNP-plot.smk, line 11:
+Command 'source /usr/bin/activate 'Rtools-1.1'; set -euo pipefail;  Rscript --vanilla /n/zanderson/SNP-plot-snake-testing/.snakemake/scripts/tmp7tps344z.SNP-plot.R' returned non-zero exit status 1.
+[Mon Sep 23 10:34:38 2024]
+Error in rule make_SNP_plot:
+    jobid: 1
+    input: /n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/file_list.txt
+    output: /n/zanderson/SNP-plot-snake-testing/SNP-Plots/HYDIN-SNP-PLOT.svg
+    conda-env: Rtools-1.1
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-23T103431.061069.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 128
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+make_SNP_plot        1
+total                2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Aug 23 12:17:35 2024]
+localrule make_SNP_plot:
+    input: /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake/1000G_Sample_Demographic_Info.txt
+    output: /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240823.svg
+    jobid: 7
+    reason: Missing output files: /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240823.svg
+    resources: tmpdir=/tmp
+
+Activating conda environment: Rtools-1.1
+[Fri Aug 23 12:17:42 2024]
+Finished job 7.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Aug 23 12:17:42 2024]
+localrule all:
+    input: /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG00599-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake/filtered-annotated-VCFs/HG02051-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.annotated.filtered.bed, /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240823.svg
+    jobid: 0
+    reason: Input files updated by another job: /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240823.svg
+    resources: tmpdir=/tmp
+
+[Fri Aug 23 12:17:42 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-08-23T121735.245655.snakemake.log

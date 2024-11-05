@@ -1,0 +1,10 @@
+targetfile: config/targets.txt
+gene_target:  config/gene_coordinates.txt
+sampledirectory: /n/alignments/ASPA_CHOP
+annotationfile: /n/zanderson/SNP-plot-snake-testing/3_ENSEMBL_CANONICAL_EXON_in_PROTEIN_CODING_GENE_minus_UTR_gencode.v45.annotation.gtf
+annotation_no_exon: /n/zanderson/SNP-plot-snake-testing/resorted.hg38.genes.mergedintervals.bed
+outputpath: /n/zanderson/SNP-plot-snake-testing
+demographicFile: /n/zanderson/SNP-plot-snake-testing/config/1000G_Sample_Demographic_Info.txt
+
+sample_suffix: .vcf.gz
+description: Canavan-plus-minus-hundredk_phased

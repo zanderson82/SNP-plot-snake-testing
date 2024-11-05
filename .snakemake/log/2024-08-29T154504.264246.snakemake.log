@@ -1,0 +1,110 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+get_plot_files_rule        1
+make_SNP_plot              1
+vcf_annotate               3
+vcf_filter                 3
+total                      9
+
+Resources before job selection: {'_cores': 20, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 17, '_nodes': 9223372036854775804}
+Execute 3 jobs...
+
+[Thu Aug 29 15:45:05 2024]
+localrule vcf_annotate:
+    input: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    output: /n/zanderson/SNP-plot-snake-testing/annotated-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.annotated.vcf
+    jobid: 10
+    reason: Code has changed since last execution
+    wildcards: sample=HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/utils.py", line 427, in format
+    return fmt.format(_pattern, *args, **variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 190, in format
+    return self.vformat(format_string, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 194, in vformat
+    result, _ = self._vformat(format_string, args, kwargs, used_args, 2)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 234, in _vformat
+    obj, arg_used = self.get_field(field_name, args, kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 299, in get_field
+    obj = self.get_value(first, args, kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/string.py", line 256, in get_value
+    return kwargs[key]
+           ~~~~~~^^^^^
+KeyError: 'unzipped_parsed'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 948, in format_wildcards
+    return format(string, **_variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/utils.py", line 437, in format
+    raise NameError(
+NameError: The name 'unzipped_parsed' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1248, in execute
+    raise e
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1244, in execute
+    success = self.scheduler.schedule()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/scheduler.py", line 313, in schedule
+    self.run(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/scheduler.py", line 406, in run
+    executor.run_jobs(jobs)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 71, in run_jobs
+    self.run_job_pre(job)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 86, in run_job_pre
+    self.printjob(job)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 110, in printjob
+    job.log_info()
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 1042, in log_info
+    logger.shellcmd(self.shellcmd, indent=indent)
+                    ^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 601, in shellcmd
+    self.format_wildcards(self.rule.shellcmd)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/jobs.py", line 950, in format_wildcards
+    raise RuleException(
+snakemake.exceptions.RuleException: NameError: The name 'unzipped_parsed' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        zcat {input.parsed_vcf} > unzipped_parsed.bed
+        bedtools intersect -a {unzipped_parsed.bed} -b {params.annotation_file} -wa -wb | awk 'BEGIN {{OFS="	"}} {{print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $15, $16}}' > {output.annotated_vcf} 
+        rm unzipped_parsed.bed
+        
+
+RuleException in rule vcf_annotate in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/parsed-vcf-annotate.smk, line 1:
+NameError: The name 'unzipped_parsed' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        zcat {input.parsed_vcf} > unzipped_parsed.bed
+        bedtools intersect -a {unzipped_parsed.bed} -b {params.annotation_file} -wa -wb | awk 'BEGIN {{OFS="	"}} {{print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $15, $16}}' > {output.annotated_vcf} 
+        rm unzipped_parsed.bed
+        

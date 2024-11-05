@@ -1,0 +1,4 @@
+/n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/M1850-ASPA-plus-minus100k.bed
+/n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/M2087-ASPA-plus-minus100k.bed
+/n/zanderson/SNP-plot-snake-testing/filtered-annotated-VCFs/M2091-ASPA-plus-minus100k.bed
+/n/zanderson/Canavan_project/new_intersects/RDN0272_2/RDN0272-ASPA_CHOP_canavan_clair3.phased.1coord.match.HOM.annot.header.bed

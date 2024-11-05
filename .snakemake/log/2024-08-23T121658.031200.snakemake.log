@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /n/zanderson/SNP-plot-snake/workflow/Snakefile, line 10:
+Missing input files for rule all:
+    affected files:
+        /n/zanderson/SNP-plot-snake/SNP-Plots/SNP-plot-20240823.svg

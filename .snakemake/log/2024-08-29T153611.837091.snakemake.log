@@ -1,0 +1,257 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+bcftools_view              3
+get_plot_files_rule        1
+make_SNP_plot              1
+vcf_annotate               3
+vcf_filter                 3
+total                     12
+
+Resources before job selection: {'_cores': 20, '_nodes': 9223372036854775807}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 17, '_nodes': 9223372036854775804}
+Execute 3 jobs...
+
+[Thu Aug 29 15:36:13 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    jobid: 11
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    wildcards: sample=HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        
+Activating conda environment: bcftools-1.19
+
+[Thu Aug 29 15:36:13 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+    jobid: 5
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+    wildcards: sample=HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+        
+Activating conda environment: bcftools-1.19
+
+[Thu Aug 29 15:36:13 2024]
+localrule bcftools_view:
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    jobid: 8
+    reason: Missing output files: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    wildcards: sample=HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC
+    resources: tmpdir=/tmp
+
+
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        
+Activating conda environment: bcftools-1.19
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk", line 62, in __rule_bcftools_view
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk", line 62, in __rule_bcftools_view
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 41:
+Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk", line 62, in __rule_bcftools_view
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk", line 62, in __rule_bcftools_view
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 41:
+Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+
+RuleException:
+CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 41:
+Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+[Thu Aug 29 15:36:13 2024]
+Error in rule bcftools_view:
+    jobid: 5
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+    conda-env: bcftools-1.19
+    shell:
+        
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 41:
+Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+[Thu Aug 29 15:36:13 2024]
+Error in rule bcftools_view:
+    jobid: 11
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    conda-env: bcftools-1.19
+    shell:
+        
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk", line 62, in __rule_bcftools_view
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+
+Removing output files of failed job bcftools_view since they might be corrupted:
+/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL_parsed.vcf
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk", line 62, in __rule_bcftools_view
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 41:
+Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+
+RuleException:
+CalledProcessError in file /n/zanderson/SNP-plot-snake-testing/workflow/rules/bcftools-view.smk, line 41:
+Command 'source /usr/bin/activate 'bcftools-1.19'; set -euo pipefail;  
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf' returned non-zero exit status 255.
+[Thu Aug 29 15:36:13 2024]
+Error in rule bcftools_view:
+    jobid: 8
+    input: /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz, /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz
+    output: /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+    conda-env: bcftools-1.19
+    shell:
+        
+           bcftools view -R /n/zanderson/SNP-plot-snake-testing/config/gene_coordinates.txt /n/1000g/align-card-2.24-hg38/FIRST_100/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg/HG00331-ONT-hg38-R9-LSK110-guppy-sup-5hmc_5mc_cg.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz /n/1000g/align-card-2.24-hg38/FIRST_100/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL.phased.vcf.gz > /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        bcftools index /n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job bcftools_view since they might be corrupted:
+/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01812-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+Removing output files of failed job bcftools_view since they might be corrupted:
+/n/zanderson/SNP-plot-snake-testing/parsed-VCFs/HG01615-ONT-hg38-R9-LSK110-guppy-sup-5mC.PMDV_FINAL_parsed.vcf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-08-29T153611.837091.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/usr/share/millerlab/snakemake-8.16.0/lib/python3.12/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.
